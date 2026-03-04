@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendr – Activate License</title>
+  <meta name="description" content="Activate your Attendr license.">
+  <link rel="icon" type="image/png" href="/img/attendr.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="/js/main.js"></script>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="/index.html">
+      <img class="brand-logo" src="img/attendr.png" alt="Attendr logo">
+      <div class="brand-text">
+        <div class="brand-name">Attendr</div>
+        <div class="brand-sub">Australian Owned & Operated</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="/features.html">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/download.html">Download</a>
+      <a href="/support.html">Support</a>
+    </nav>
+
+    <div class="topbar-cta">
+      <a class="btn btn-ghost" href="/pricing.html">View Pricing</a>
+      <a class="btn btn-primary" href="/download.html">Download Free Trial</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Activate your license</h1>
+      <p class="lead">
+        Enter your Attendr Instance ID and we’ll email your license file to you instantly.
+      </p>
+
+      <div class="hero-badges">
+        <span class="badge">Secure</span>
+        <span class="badge">Instant Delivery</span>
+        <span class="badge">On-Prem</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="panel">
+        <div class="panel-title">License details</div>
+
+        <form id="licenseForm">
+          <p class="muted small">Your email (where we send the license)</p>
+          <input id="email" type="email" required style="width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.08); color:white;" placeholder="you@company.com">
+
+          <p class="muted small" style="margin-top:14px;">Organisation name</p>
+          <input id="org" type="text" required style="width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.08); color:white;" placeholder="Company Pty Ltd">
+
+          <p class="muted small" style="margin-top:14px;">Instance ID (from Attendr)</p>
+          <input id="instanceId" type="text" required style="width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.08); color:white;" placeholder="e.g. 9A4F-21C3-B71D">
+
+          <input id="sessionId" type="hidden">
+          <div style="margin-top:18px;">
+            <button class="btn btn-primary btn-lg" type="submit" style="border:none; cursor:pointer; width:100%;">
+              Generate & Email License
+            </button>
+          </div>
+
+          <p id="status" class="muted small" style="margin-top:12px;"></p>
+        </form>
+
+        <hr style="margin:18px 0; border:0; border-top:1px solid rgba(255,255,255,0.15);">
+
+        <p class="muted small">
+          <strong>Where do I find my Instance ID?</strong><br>
+          In Attendr: <em>Settings → Licensing</em> (or wherever your Instance ID is shown) and click copy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© 2026 Attendr</div>
+    <div class="footer-links">
+      <a href="legal/terms.html">Terms</a>
+      <a href="legal/privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Grab Stripe session_id from URL if present
+  const params = new URLSearchParams(window.location.search);
+  const sid = params.get("session_id");
+  if (sid) document.getElementById("sessionId").value = sid;
+
+  document.getElementById("licenseForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const status = document.getElementById("status");
+    status.textContent = "Generating license…";
+
+    const payload = {
+      email: document.getElementById("email").value.trim(),
+      org: document.getElementById("org").value.trim(),
+      instanceId: document.getElementById("instanceId").value.trim(),
+      sessionId: document.getElementById("sessionId").value.trim()
+    };
+
+    try {
+      const res = await fetch("/api/issue-license", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        status.textContent = data.error || "Something went wrong.";
+        return;
+      }
+
+      status.textContent = "Done! Check your email for the license file.";
+    } catch (err) {
+      status.textContent = "Could not reach licensing service. Please try again.";
+    }
+  });
+</script>
+
+</body>
+</html>

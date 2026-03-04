@@ -1,0 +1,9 @@
+{
+  "name": "attendr-web",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "nodemailer": "^6.9.15",
+    "stripe": "^14.25.0"
+  }
+}
