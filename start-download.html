@@ -11,18 +11,60 @@
 <link rel="icon" type="image/png" href="/img/attendr.png">
 <link rel="stylesheet" href="/css/style.css">
 
+<style>
+
+.download-wrapper{
+max-width:700px;
+margin:120px auto;
+text-align:center;
+}
+
+.download-icon{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.progress-bar{
+width:100%;
+height:6px;
+background:#e6eef7;
+border-radius:4px;
+overflow:hidden;
+margin:30px 0;
+}
+
+.progress{
+height:6px;
+width:0%;
+background:#2d8cff;
+animation:progress 1.2s linear forwards;
+}
+
+@keyframes progress{
+from{width:0%}
+to{width:100%}
+}
+
+.next-steps{
+margin-top:40px;
+padding:25px;
+border-radius:8px;
+background:#f7f9fc;
+}
+
+</style>
+
 <script>
 
-setTimeout(function () {
-window.location.href = "/downloads/Attendr-v1.0.zip";
-}, 1200);
+setTimeout(function(){
+window.location.href="/downloads/Attendr-v1.0.zip";
+},1200);
 
 </script>
 
 </head>
 
 <body>
-
 
 <header class="topbar">
 
@@ -44,33 +86,45 @@ window.location.href = "/downloads/Attendr-v1.0.zip";
 </header>
 
 
-
 <main class="container">
 
-<section class="hero" style="text-align:center;padding:80px 0">
+<div class="download-wrapper">
 
-<h1>Your download is starting…</h1>
+<div class="download-icon">⬇️</div>
+
+<h1>Your download is starting</h1>
 
 <p class="lead">
 Attendr will begin downloading automatically.
 </p>
 
-<div style="margin-top:30px">
+<div class="progress-bar">
+<div class="progress"></div>
+</div>
 
 <a class="btn btn-primary btn-lg" href="/downloads/Attendr-v1.0.zip">
 Download manually
 </a>
 
-</div>
-
-<p style="margin-top:20px" class="muted">
+<p class="muted" style="margin-top:15px;">
 If the download doesn't start automatically, click the button above.
 </p>
 
-</section>
+<div class="next-steps">
+
+<strong>Next steps:</strong>
+
+<p style="margin-top:10px;">
+1. Extract the Attendr package<br>
+2. Run the application<br>
+3. Open Attendr in your browser and create your admin account
+</p>
+
+</div>
+
+</div>
 
 </main>
-
 
 
 <footer class="footer">
@@ -84,7 +138,6 @@ If the download doesn't start automatically, click the button above.
 </div>
 
 </footer>
-
 
 </body>
 </html>
