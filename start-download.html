@@ -13,21 +13,22 @@
 
 <style>
 
-.download-wrapper{
-max-width:700px;
-margin:120px auto;
-text-align:center;
+body{
+min-height:100vh;
+background: linear-gradient(180deg,#4f7aa5 0%,#2b4c6f 100%);
+color:white;
 }
 
-.download-icon{
-font-size:48px;
-margin-bottom:20px;
+.download-wrapper{
+max-width:700px;
+margin:140px auto;
+text-align:center;
 }
 
 .progress-bar{
 width:100%;
 height:6px;
-background:#e6eef7;
+background:rgba(255,255,255,0.2);
 border-radius:4px;
 overflow:hidden;
 margin:30px 0;
@@ -36,7 +37,7 @@ margin:30px 0;
 .progress{
 height:6px;
 width:0%;
-background:#2d8cff;
+background:#5fa7ff;
 animation:progress 1.2s linear forwards;
 }
 
@@ -49,7 +50,7 @@ to{width:100%}
 margin-top:40px;
 padding:25px;
 border-radius:8px;
-background:#f7f9fc;
+background:rgba(255,255,255,0.08);
 }
 
 </style>
@@ -90,8 +91,6 @@ window.location.href="/downloads/Attendr-v1.0.zip";
 
 <div class="download-wrapper">
 
-<div class="download-icon">⬇️</div>
-
 <h1>Your download is starting</h1>
 
 <p class="lead">
@@ -106,13 +105,13 @@ Attendr will begin downloading automatically.
 Download manually
 </a>
 
-<p class="muted" style="margin-top:15px;">
+<p style="margin-top:15px;opacity:0.8;">
 If the download doesn't start automatically, click the button above.
 </p>
 
 <div class="next-steps">
 
-<strong>Next steps:</strong>
+<strong>Next steps</strong>
 
 <p style="margin-top:10px;">
 1. Extract the Attendr package<br>
