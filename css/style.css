@@ -3,8 +3,8 @@ GLOBAL
 ========================= */
 
 * {
-  box-sizing: border-box;
-  }
+box-sizing: border-box;
+}
 
 body {
 margin: 0;
@@ -119,8 +119,14 @@ HERO
 display: grid;
 grid-template-columns: 1fr 0.9fr;
 gap: 80px;
-padding: 140px 0 110px 0;
+padding: 140px 0 40px 0;
 align-items: center;
+}
+
+.hero-trust,
+.hero-badges {
+grid-column: 1 / -1;
+text-align: center;
 }
 
 .hero-left {
@@ -153,12 +159,24 @@ margin-bottom: 26px;
 margin-right: 12px;
 }
 
+.hero-trust {
+margin-top: 0px;
+margin-bottom: 35px;
+font-size: 20px;
+line-height: 1.6;
+color: white;
+max-width: 850px;
+margin-left: auto;
+margin-right: auto;
+}
+
 .hero-badges {
-margin-top: 14px;
 display: flex;
 justify-content: center;
 gap: 10px;
 flex-wrap: wrap;
+margin-top: 14px;
+margin-bottom: 70px;
 }
 
 .badge {
@@ -170,16 +188,44 @@ font-size: 12px;
 margin-right: 6px;
 }
 
-.hero-trust {
-margin-top: 22px;
-margin-bottom: 12px;
-font-size: 18px;
-line-height: 1.6;
+/* =========================
+PANELS (GLASS CARDS)
+========================= */
+
+.panel {
+background: rgba(255,255,255,0.12);
+backdrop-filter: blur(8px);
+border-radius: 12px;
+padding: 30px;
+border: 1px solid rgba(255,255,255,0.2);
+box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.panel-title {
+font-weight: 600;
+margin-bottom: 10px;
 color: white;
-text-align: center;
-max-width: 700px;
-margin-left: auto;
-margin-right: auto;
+}
+
+/* =========================
+GRID
+========================= */
+
+.grid-3 {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 24px;
+margin-top: 20px;
+margin-bottom: 70px;
+}
+
+.grid-3 .panel {
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-3 .panel:hover {
+transform: translateY(-6px);
+box-shadow: 0 30px 50px rgba(0,0,0,0.35);
 }
 
 /* =========================
@@ -211,6 +257,14 @@ SCREENSHOT
 .screenshot img {
 width: 100%;
 border-radius: 10px;
+box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+border: 1px solid rgba(255,255,255,0.25);
+transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.screenshot img:hover {
+transform: translateY(-4px);
+box-shadow: 0 40px 80px rgba(0,0,0,0.45);
 }
 
 .screenshot-placeholder {
@@ -221,23 +275,6 @@ color: rgba(255,255,255,0.7);
 
 .ph-title {
 font-weight: 600;
-}
-
-/* =========================
-SCREENSHOT FRAME (Premium Look)
-========================= */
-
-.screenshot img {
-width: 100%;
-border-radius: 10px;
-box-shadow: 0 30px 60px rgba(0,0,0,0.35);
-border: 1px solid rgba(255,255,255,0.25);
-transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.screenshot img:hover {
-transform: translateY(-4px);
-box-shadow: 0 40px 80px rgba(0,0,0,0.45);
 }
 
 /* =========================
@@ -257,27 +294,6 @@ border-radius: 10px;
 
 .carousel-image.active {
 display: block;
-}
-
-
-/* =========================
-GRID
-========================= */
-
-.grid-3 {
-display: grid;
-grid-template-columns: repeat(3,1fr);
-gap: 24px;
-margin-bottom: 70px;
-}
-
-.grid-3 .panel {
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.grid-3 .panel:hover {
-transform: translateY(-6px);
-box-shadow: 0 30px 50px rgba(0,0,0,0.35);
 }
 
 /* =========================
@@ -302,39 +318,21 @@ color: rgba(255,255,255,0.8);
 }
 
 .feature-grid {
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:50px;
-max-width:1000px;
-margin:auto;
-}
-
-.feature h3 {
-color:white;
-margin-bottom:6px;
-font-size:18px;
-}
-
-.feature p {
-color:rgba(255,255,255,0.75);
-}
-
-
-
-.feature-grid {
 display: grid;
 grid-template-columns: repeat(3,1fr);
 gap: 28px;
+max-width: 1000px;
+margin: auto;
 }
 
-.feature-name {
-font-weight: 600;
-margin-bottom: 6px;
+.feature h3 {
 color: white;
+margin-bottom: 6px;
+font-size: 18px;
 }
 
-.feature-grid .muted {
-color: rgba(255,255,255,0.8);
+.feature p {
+color: rgba(255,255,255,0.75);
 }
 
 /* =========================
@@ -440,16 +438,12 @@ text-align: center;
 }
 
 /* =========================
-MOBILE NAV DEFAULT
+MOBILE
 ========================= */
 
 .mobile-nav {
 display: none;
 }
-
-/* =========================
-MOBILE
-========================= */
 
 @media (max-width: 900px) {
 
