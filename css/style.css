@@ -421,6 +421,12 @@ text-decoration: none;
 opacity: 0.8;
 }
 
+.footer-producthunt {
+margin-left: 20px;
+display: flex;
+align-items: center;
+}
+
 /* =========================
 TEXT HELPERS
 ========================= */
