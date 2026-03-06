@@ -123,6 +123,10 @@ padding: 140px 0 110px 0;
 align-items: center;
 }
 
+.hero-left {
+text-align: center;
+}
+
 .hero h1 {
 font-size: 56px;
 line-height: 1.15;
@@ -137,10 +141,12 @@ font-size: 20px;
 color: rgba(255,255,255,0.85);
 margin-bottom: 34px;
 max-width: 520px;
+margin-left: auto;
+margin-right: auto;
 }
 
 .hero-actions {
-margin-bottom: 22px;
+margin-bottom: 26px;
 }
 
 .hero-actions .btn {
@@ -148,11 +154,11 @@ margin-right: 12px;
 }
 
 .hero-badges {
-    margin-top: 14px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+margin-top: 14px;
+display: flex;
+justify-content: center;
+gap: 10px;
+flex-wrap: wrap;
 }
 
 .badge {
@@ -165,39 +171,16 @@ margin-right: 6px;
 }
 
 .hero-trust {
-margin-top:16px;
-margin-bottom:14px;
-font-size:14px;
-line-height:1.5;
-opacity:0.9;
+margin-top: 22px;
+margin-bottom: 12px;
+font-size: 18px;
+line-height: 1.6;
+color: white;
+text-align: center;
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
 }
-
-/* =========================
-HERO TRUST SECTION
-========================= */
-
-.hero-trust-section {
-text-align:center;
-margin-top:-40px;
-margin-bottom:60px;
-}
-
-.hero-trust-section .hero-trust {
-max-width:650px;
-margin:auto;
-font-size:14px;
-line-height:1.6;
-opacity:0.9;
-margin-bottom:16px;
-}
-
-.hero-trust-section .hero-badges {
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-}
-
 
 /* =========================
 HERO SCREENSHOT CAROUSEL
@@ -219,26 +202,6 @@ transition: opacity 0.6s ease;
 .hero-image.active {
 display: block;
 opacity: 1;
-}
-
-
-/* =========================
-PANELS (Glass Style)
-========================= */
-
-.panel {
-background: rgba(255,255,255,0.12);
-backdrop-filter: blur(8px);
-border-radius: 12px;
-padding: 30px;
-border: 1px solid rgba(255,255,255,0.2);
-box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-}
-
-.panel-title {
-font-weight: 600;
-margin-bottom: 10px;
-color: white;
 }
 
 /* =========================
