@@ -173,6 +173,33 @@ opacity:0.9;
 }
 
 /* =========================
+HERO TRUST SECTION
+========================= */
+
+.hero-trust-section {
+text-align:center;
+margin-top:-40px;
+margin-bottom:60px;
+}
+
+.hero-trust-section .hero-trust {
+max-width:650px;
+margin:auto;
+font-size:14px;
+line-height:1.6;
+opacity:0.9;
+margin-bottom:16px;
+}
+
+.hero-trust-section .hero-badges {
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+
+/* =========================
 HERO SCREENSHOT CAROUSEL
 ========================= */
 
