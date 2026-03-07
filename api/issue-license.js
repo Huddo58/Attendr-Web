@@ -30,27 +30,35 @@ function plusOneYearISODate() {
   };
 }
 
+// --------------------------------------------------
+// SIGN LICENSE (MATCHES MANUAL GENERATOR)
+// --------------------------------------------------
+
 function signLicense(payload, privateKeyPem) {
+
   const payloadJson = JSON.stringify(payload);
   const payloadB64 = b64url(payloadJson);
 
-  const keyObject = crypto.createPrivateKey({
-    key: privateKeyPem,
-    format: "pem"
-  });
+  const signer = crypto.createSign("RSA-SHA256");
+  signer.update(payloadB64);
+  signer.end();
 
-  const signature = crypto.sign(
-    null,
-    Buffer.from(payloadB64),
-    keyObject
-  );
+  const signatureBase64 = signer.sign(privateKeyPem, "base64");
 
-  const sigB64 = b64url(signature);
+  const sigB64 = signatureBase64
+    .replace(/=/g, "")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_");
 
   return `${payloadB64}.${sigB64}`;
 }
 
+// --------------------------------------------------
+// EMAIL LICENSE
+// --------------------------------------------------
+
 async function sendEmail({ to, subject, text }) {
+
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -68,14 +76,21 @@ async function sendEmail({ to, subject, text }) {
     subject,
     text
   });
+
 }
 
+// --------------------------------------------------
+// MAIN HANDLER
+// --------------------------------------------------
+
 export default async function handler(req, res) {
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
+
     const { org, instanceId, sessionId } = req.body || {};
 
     if (!org || !instanceId || !sessionId) {
@@ -88,6 +103,7 @@ export default async function handler(req, res) {
     const session_id = sessionId;
 
     // Verify Stripe checkout session
+
     const session = await stripe.checkout.sessions.retrieve(session_id);
 
     if (!session) {
@@ -109,6 +125,7 @@ export default async function handler(req, res) {
     }
 
     // Determine purchased tier
+
     const items = await stripe.checkout.sessions.listLineItems(session_id, {
       limit: 10
     });
@@ -132,6 +149,7 @@ export default async function handler(req, res) {
     const { issued_at, expires_at } = plusOneYearISODate();
 
     // Build license payload
+
     const payload = {
       tier: tierInfo.tier,
       max_users: tierInfo.max_users,
@@ -143,7 +161,8 @@ export default async function handler(req, res) {
       stripe_invoice: session.id
     };
 
-    // Load private key from Vercel env and convert \n back to real newlines
+    // Load private key from Vercel env
+
     const privateKey =
       process.env.LICENSE_PRIVATE_KEY_PEM?.replace(/\\n/g, "\n");
 
@@ -153,10 +172,12 @@ export default async function handler(req, res) {
       });
     }
 
-    // Sign license
+    // Generate license
+
     const licenseKey = signLicense(payload, privateKey);
 
-    // Email license
+    // Send license email
+
     await sendEmail({
       to: email,
       subject: "Your Attendr License Key",
@@ -181,10 +202,15 @@ Paste this into Attendr: Admin → Settings → Licensing`
     });
 
     return res.status(200).json({ ok: true, email });
+
   } catch (err) {
+
     console.error(err);
+
     return res.status(500).json({
       error: "Server error generating license."
     });
+
   }
+
 }
