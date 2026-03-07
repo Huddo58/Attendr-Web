@@ -62,11 +62,15 @@ async function sendEmail({ to, subject, text }) {
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-  try {
-    const { org, instance_id, session_id } = req.body || {};
-    if (!org || !instance_id || !session_id) {
-      return res.status(400).json({ error: "Missing org, instance_id, or session_id." });
-    }
+  try{ 
+   const { org, instanceId, sessionId } = req.body || {};
+
+if (!org || !instanceId || !sessionId) {
+  return res.status(400).json({ error: "Missing org, instanceId, or sessionId." });
+}
+
+const instance_id = instanceId;
+const session_id = sessionId;
 
     // 1) Verify checkout session
     const session = await stripe.checkout.sessions.retrieve(session_id);

@@ -6,45 +6,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Attendr – Download</title>
+<title>Download Attendr</title>
 
 <meta name="description" content="Download the Attendr free trial. Deploy in minutes and see your team's presence in real time.">
 
-<link rel="icon" type="image/png" href="/img/attendr.png">
-
+<link rel="icon" href="image/attendr.png">
 <link rel="stylesheet" href="css/style.css">
-<script defer src="/js/main.js"></script>
+
+<script>
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 
 </head>
 
 <body>
 
 
+
 <header class="topbar">
 
-<div class="container topbar-inner">
+<div class="container nav">
 
-<a class="brand" href="/index.html">
-
-<img class="brand-logo" src="img/attendr.png" alt="Attendr logo">
-
-<div class="brand-text">
-<div class="brand-name">Attendr</div>
-<div class="brand-sub">Australian Owned & Operated</div>
+<div class="logo">
+<img src="image/attendr.png">
+<span>Attendr</span>
 </div>
 
-</a>
-
-<nav class="nav">
-<a href="/features.html">Features</a>
-<a href="/pricing.html">Pricing</a>
-<a href="/download.html">Download</a>
-<a href="/support.html">Support</a>
+<nav>
+<a href="features.html">Features</a>
+<a href="pricing.html">Pricing</a>
+<a href="download.html">Download</a>
+<a href="support.html">Support</a>
 </nav>
 
-<div class="topbar-cta">
-<a class="btn btn-ghost" href="/pricing.html">View Pricing</a>
-<a class="btn btn-primary" href="/download.html">Download Free Trial</a>
+<div class="nav-cta">
+<a class="btn-outline" href="pricing.html">View Pricing</a>
+<a class="btn-primary" href="/start-download.html">Download Free Trial</a>
 </div>
 
 </div>
@@ -53,17 +51,15 @@
 
 
 
-<main class="container">
-
-
 <section class="hero">
 
-<div class="hero-left">
+<div class="container hero-text center">
 
 <h1>Download Attendr</h1>
 
-<p class="lead">
-Deploy Attendr inside your organisation in minutes and instantly see who’s in, who’s out, and where your team is working.
+<p class="lead-small">
+The free trial includes the full Attendr platform with a 14-day evaluation license.
+No external dependencies. No cloud services. Just download, run and deploy.
 </p>
 
 <div class="hero-badges">
@@ -74,24 +70,42 @@ Deploy Attendr inside your organisation in minutes and instantly see who’s in,
 
 </div>
 
+</section>
 
-<div class="hero-right">
 
-<div class="panel">
 
-<div class="panel-title">Free Trial</div>
+<section class="hero-download">
 
-<p class="muted">
-Download the full Attendr system and run a fully functional 14-day trial.
+<div class="container hero-download-grid">
+
+
+<div class="download-card">
+
+<h3>Windows Version</h3>
+
+<p>
+Download the full Attendr system and run a fully functional 14-day trial inside your organisation.
 </p>
 
-<a class="btn btn-primary btn-lg" href="/start-download.html">
-Download Windows Version
+<a class="btn-primary large" href="/start-download.html">
+Download Windows
 </a>
 
-<p class="small muted">
-Linux version coming soon
+</div>
+
+
+
+<div class="download-card">
+
+<h3>Linux Version</h3>
+
+<p>
+Linux deployment package for Attendr servers and infrastructure environments.
 </p>
+
+<a class="btn-outline large disabled">
+Coming Soon
+</a>
 
 </div>
 
@@ -101,35 +115,20 @@ Linux version coming soon
 
 
 
-<section class="section">
+<section class="license-cta">
 
-<div class="section-head">
-<h2>Getting started is easy</h2>
-<p class="muted">Most teams are up and running within minutes.</p>
-</div>
+<div class="container license-cta-inner">
 
-<div class="grid-3">
+<h2>Ready to deploy Attendr?</h2>
 
-<div class="panel">
-<div class="panel-title">1. Download</div>
-<p class="muted">
-Download the Attendr package and extract it on your server or workstation.
+<p>
+If you plan to run Attendr in production you can purchase a
+12-month license for your organisation.
 </p>
-</div>
 
-<div class="panel">
-<div class="panel-title">2. Run Attendr</div>
-<p class="muted">
-Start the application and open Attendr in your browser.
-</p>
-</div>
-
-<div class="panel">
-<div class="panel-title">3. Create Admin Account</div>
-<p class="muted">
-Your first login creates the administrator account for your organisation.
-</p>
-</div>
+<a class="btn-primary large" href="pricing.html">
+View Licensing Options
+</a>
 
 </div>
 
@@ -137,38 +136,68 @@ Your first login creates the administrator account for your organisation.
 
 
 
-<section class="section">
+<section class="system-section">
 
-<div class="section-head">
+<div class="container system-grid">
+
 <h2>System Requirements</h2>
+
+<ul>
+<li>Windows Server / Windows 10 / Windows 11</li>
+<li>Linux version coming soon</li>
+<li>Modern web browser</li>
+<li>Internal network access</li>
+</ul>
+
+<p>
+Attendr runs entirely inside your infrastructure with no external cloud dependencies.
+</p>
+
 </div>
 
-<div class="grid-3">
+</section>
 
-<div class="panel">
-<div class="panel-title">Supported Platforms</div>
-<p class="muted">
-Windows Server<br>
-Windows 10 / 11<br>
-Linux (coming soon)
+
+
+
+
+<section class="setup-section">
+
+<div class="container tile-grid setup-grid">
+
+
+<div class="tile setup-tile">
+
+<h3>1. Download</h3>
+
+<p>
+Download the Attendr package from this page.
 </p>
+
 </div>
 
-<div class="panel">
-<div class="panel-title">Recommended</div>
-<p class="muted">
-2 GB RAM minimum<br>
-Modern web browser<br>
-Internal network access
+
+
+<div class="tile setup-tile">
+
+<h3>2. Run Attendr</h3>
+
+<p>
+Start the application and open the dashboard in your browser.
 </p>
+
 </div>
 
-<div class="panel">
-<div class="panel-title">Deployment</div>
-<p class="muted">
-Attendr runs entirely inside your infrastructure.
-No cloud services required.
+
+
+<div class="tile setup-tile">
+
+<h3>3. Create Admin</h3>
+
+<p>
+Your first login creates the administrator account.
 </p>
+
 </div>
 
 </div>
@@ -177,50 +206,52 @@ No cloud services required.
 
 
 
-<section class="cta">
+<section class="cta-section">
 
-<h2>Ready to try Attendr?</h2>
+<h2>Need a full license?</h2>
 
-<div class="cta-actions">
+<p>
+If you are ready to deploy Attendr in production you can purchase a 12-month license.
+</p>
 
-<a class="btn btn-primary btn-lg" href="/start-download.html">
-Download Free Trial
+<a class="btn-primary large cta-button" href="pricing.html">
+View Pricing
 </a>
 
-</div>
-
 </section>
 
 
-</main>
 
+<footer>
 
+<div class="container footer">
 
-<footer class="footer">
-
-<div class="container footer-inner">
-
-<div>
-© 2026 Attendr
-</div>
+<p>© 2026 Attendr</p>
 
 <div class="footer-links">
-<a href="legal/terms.html">Terms</a>
-<a href="legal/privacy.html">Privacy</a>
+<a href="/legal/terms.html">Terms</a>
+<a href="/legal/privacy.html">Privacy</a>
 </div>
 
+</div>
+
+
+
 <div class="footer-producthunt">
-<a href="https://www.producthunt.com/posts/attendr?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-attendr" target="_blank">
+
+<a href="https://www.producthunt.com/posts/attendr" target="_blank">
+
 <img 
 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=attendr&theme=dark"
-alt="Attendr - Featured on Product Hunt"
+alt="Attendr on Product Hunt"
 style="width:200px;height:54px;">
+
 </a>
-</div>
 
 </div>
 
 </footer>
+
 
 
 </body>

@@ -8,14 +8,14 @@
 
 <title>Attendr – Preparing Download</title>
 
-<link rel="icon" type="image/png" href="/img/attendr.png">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" type="image/png" href="image/attendr.png">
+<link rel="stylesheet" href="css/style.css">
 
-<script defer src="/js/main.js"></script>
+<script defer src="js/main.js"></script>
 
 <!-- Vercel Analytics -->
 <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 
@@ -23,142 +23,145 @@
 
 body{
 min-height:100vh;
-background: linear-gradient(180deg,#4f7aa5 0%,#2b4c6f 100%);
+background: linear-gradient(180deg,#3e6285 0%,#0d2b4d 100%);
 color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:system-ui;
 }
 
 .download-wrapper{
-max-width:700px;
-margin:140px auto;
+max-width:800px;
 text-align:center;
 }
 
-.progress-bar{
-width:100%;
-height:6px;
-background:rgba(255,255,255,0.2);
-border-radius:4px;
-overflow:hidden;
-margin:30px 0;
+.download-wrapper h1{
+font-size:36px;
+margin-bottom:10px;
 }
 
-.progress{
-height:6px;
-width:0%;
-background:#5fa7ff;
-animation:progress 2s linear forwards;
+.download-wrapper p{
+opacity:.9;
+margin-bottom:20px;
 }
 
-@keyframes progress{
-from{width:0%}
-to{width:100%}
+.manual-download{
+margin:20px 0 30px 0;
 }
 
 .next-steps{
-margin-top:40px;
-padding:25px;
-border-radius:8px;
+margin-top:30px;
+padding:35px;
+border-radius:12px;
 background:rgba(255,255,255,0.08);
+backdrop-filter:blur(6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.next-steps p{
+margin-top:12px;
+line-height:1.6;
+opacity:.9;
+}
+
+hr{
+margin:20px 0;
+border:none;
+border-top:1px solid rgba(255,255,255,0.25);
+}
+
+.bottom-actions{
+margin-top:40px;
+display:flex;
+gap:20px;
+justify-content:center;
+}
+
+.btn-outline-light{
+border:1px solid white;
+padding:12px 22px;
+border-radius:6px;
+color:white;
+text-decoration:none;
 }
 
 </style>
 
 <script>
 
-setTimeout(function(){
-window.location.href="/downloads/Attendr-v1.0.zip";
-},2000);
+if (location.protocol !== "file:") {
+    setTimeout(function(){
+        window.location.href="/downloads/Attendr-v1.0.zip";
+    },1500);
+}
 
 </script>
 
 </head>
 
+
 <body>
-
-<header class="topbar">
-
-<div class="container topbar-inner">
-
-<a class="brand" href="/index.html">
-
-<img class="brand-logo" src="/img/attendr.png">
-
-<div class="brand-text">
-<div class="brand-name">Attendr</div>
-<div class="brand-sub">Australian Owned & Operated</div>
-</div>
-
-</a>
-
-</div>
-
-</header>
-
-
-<main class="container">
 
 <div class="download-wrapper">
 
 <h1>Your download is starting</h1>
 
-<p class="lead">
+<p>
 Attendr will begin downloading automatically.
 </p>
 
-<div class="progress-bar">
-<div class="progress"></div>
-</div>
+<div class="manual-download">
 
-<a class="btn btn-primary btn-lg" href="/downloads/Attendr-v1.0.zip">
-Download manually
+<a class="btn-primary large" href="/downloads/Attendr-v1.0.zip">
+Download Manually
 </a>
 
-<p style="margin-top:15px;opacity:0.8;">
+</div>
+
+<p style="opacity:.85;">
 If the download doesn't start automatically, click the button above.
 </p>
 
+
 <div class="next-steps">
 
-<strong>Next steps</strong>
+<strong>Next Steps</strong>
 
-<p style="margin-top:10px;">
+<p>
 1. Extract the Attendr package<br>
 2. Run the application<br>
-3. Open Attendr in your browser and create your admin account
+3. Open Attendr in your browser<br>
+4. Create your admin account
+</p>
+
+<hr>
+
+<strong>What you'll see first</strong>
+
+<p>
+• Create departments for your organisation<br>
+• Add users to the system<br>
+• Staff update their status and location<br>
+• Your live team dashboard appears instantly
 </p>
 
 </div>
 
-</div>
 
-</main>
+<div class="bottom-actions">
 
-
-<footer class="footer">
-
-<div class="container footer-inner">
-
-<div>
-© 2026 Attendr
-</div>
-
-<div class="footer-links">
-<a href="legal/terms.html">Terms</a>
-<a href="legal/privacy.html">Privacy</a>
-</div>
-
-<div class="footer-producthunt">
-<a href="https://www.producthunt.com/posts/attendr?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-attendr" target="_blank">
-<img 
-src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=attendr&theme=dark"
-alt="Attendr - Featured on Product Hunt"
-style="width:200px;height:54px;">
+<a class="btn-outline-light" href="/index.html">
+Back to Home
 </a>
-</div>
+
+<a class="btn-primary" href="/pricing.html">
+View Pricing
+</a>
 
 </div>
 
-</footer>
+</div>
 
 </body>
 </html>

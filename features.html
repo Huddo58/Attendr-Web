@@ -1,55 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Attendr – Features</title>
-
-<meta name="description" content="Explore the features of Attendr — a simple real-time staff presence system designed for operational teams.">
-
-<link rel="icon" type="image/png" href="/img/attendr.png">
+<title>Attendr Features</title>
 
 <link rel="stylesheet" href="css/style.css">
-<script defer src="/js/main.js"></script>
+<link rel="icon" href="image/attendr.png">
 
 <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 
 </head>
+
 
 <body>
 
 
 <header class="topbar">
 
-<div class="container topbar-inner">
+<div class="container nav">
 
-<a class="brand" href="/index.html">
-
-<img class="brand-logo" src="img/attendr.png" alt="Attendr logo">
-
-<div class="brand-text">
-<div class="brand-name">Attendr</div>
-<div class="brand-sub">Australian Owned & Operated</div>
+<div class="logo">
+<img src="image/attendr.png">
+<span>Attendr</span>
 </div>
 
-</a>
-
-<nav class="nav">
-<a href="/features.html">Features</a>
-<a href="/pricing.html">Pricing</a>
-<a href="/download.html">Download</a>
-<a href="/support.html">Support</a>
+<nav>
+<a href="features.html">Features</a>
+<a href="pricing.html">Pricing</a>
+<a href="download.html">Download</a>
+<a href="support.html">Support</a>
 </nav>
 
-<div class="topbar-cta">
-<a class="btn btn-ghost" href="/pricing.html">View Pricing</a>
-<a class="btn btn-primary" href="/download.html">Download Free Trial</a>
+<div class="nav-cta">
+<a class="btn-outline" href="pricing.html">View Pricing</a>
+<a class="btn-primary" href="/start-download.html">Download Free Trial</a>
 </div>
 
 </div>
@@ -57,39 +47,35 @@
 </header>
 
 
-<main class="container">
-
-
-<!-- HERO -->
 
 <section class="hero">
 
-<div class="hero-left">
+<div class="container hero-grid">
+
+<div class="hero-text">
 
 <h1>Powerful features.<br>Simple design.</h1>
 
-<p class="lead">
+<p>
 Attendr gives your team instant visibility of who is in, who is remote,
-and where people are working — without complex HR software.
+and where people are working — without complex HR systems.
+Available as an on-prem deployment with a cloud SaaS platform coming soon.
 </p>
 
-<div class="hero-badges">
-<span class="badge">On-Prem</span>
-<span class="badge">Real-Time</span>
-<span class="badge">Fast Deployment</span>
-<span class="badge">Built for Operations</span>
+<div class="hero-buttons">
+<a class="btn-primary" href="/start-download.html">Download Free Trial</a>
+<a class="btn-outline-light" href="pricing.html">View Pricing</a>
 </div>
 
 </div>
 
 
-<div class="hero-right">
+<div class="hero-carousel">
 
-<div class="panel screenshot">
-<img src="img/Dashboard.png" alt="Attendr Dashboard">
+<img src="image/dashboard.png" class="carousel active">
+<img src="image/kiosk.png" class="carousel">
+
 </div>
-
-<div class="muted center small">Real-time Attendr dashboard</div>
 
 </div>
 
@@ -97,226 +83,138 @@ and where people are working — without complex HR software.
 
 
 
-<!-- CORE FEATURES -->
+<section class="feature-section">
 
-<section class="section">
+<div class="container feature-row">
 
-<div class="section-head">
-<h2>Core Features</h2>
-<p class="muted">Everything you need to manage team presence clearly.</p>
-</div>
+<div class="feature-text">
 
-<div class="feature-grid">
+<h2>Live Presence Dashboard</h2>
 
-
-<div class="feature">
-<h3>Live Presence Dashboard</h3>
-<p class="muted">
-Instantly see who is available, remote, offsite or unavailable across your organisation.
+<p>
+Instantly see who is available, remote, or unavailable across your organisation.
+Attendr gives operations teams a clear overview without needing multiple systems.
 </p>
-</div>
 
-
-<div class="feature">
-<h3>Kiosk Mode</h3>
-<p class="muted">
-Large screen dashboard perfect for shared displays, operations rooms, or team areas.
+<p>
+Statuses update in real time so everyone can instantly see where people are working.
 </p>
-</div>
-
-
-<div class="feature">
-<h3>Locations</h3>
-<p class="muted">
-Users can quickly set where they are working — office, home, client site, or custom locations.
-</p>
-</div>
-
-
-<div class="feature">
-<h3>Status Comments</h3>
-<p class="muted">
-Add short notes such as return times, meeting details, or other context for your team.
-</p>
-</div>
-
-
-<div class="feature">
-<h3>Departments</h3>
-<p class="muted">
-Organise staff into departments for easier visibility and filtering.
-</p>
-</div>
-
-
-<div class="feature">
-<h3>Daily Status Reset</h3>
-<p class="muted">
-Optional automatic reset keeps status data accurate each day.
-</p>
-</div>
-
-
-<div class="feature">
-<h3>Simple Administration</h3>
-<p class="muted">
-Admins can easily manage users, statuses, locations and departments.
-</p>
-</div>
-
-
-<div class="feature">
-<h3>Licensing & Trial</h3>
-<p class="muted">
-Start with a 14-day free trial and upgrade to a simple annual license.
-</p>
-</div>
-
-
-<div class="feature">
-<h3>Runs On-Prem</h3>
-<p class="muted">
-Deploy Attendr inside your own infrastructure with no cloud dependency.
-</p>
-</div>
-
 
 </div>
 
-</section>
+<div class="feature-image">
+<img src="image/dashboard.png">
+</div>
+
+</div>
 
 
 
-<!-- KIOSK SCREENSHOT -->
+<div class="container feature-row reverse">
 
-<section class="section">
+<div class="feature-text">
 
-<div class="section-head">
 <h2>Kiosk Mode</h2>
-<p class="muted">Perfect for team displays and operations centres.</p>
-</div>
 
-<div class="panel screenshot">
-<img src="img/Kiosk.png" alt="Attendr Kiosk Mode">
-</div>
-
-</section>
-
-
-
-<!-- ADMIN FEATURES -->
-
-<section class="section">
-
-<div class="section-head">
-<h2>Administration</h2>
-<p class="muted">Control your entire Attendr environment easily.</p>
-</div>
-
-<div class="feature-grid">
-
-
-<div class="feature">
-<h3>User Management</h3>
-<p class="muted">
-Add, edit, and manage users quickly from the admin interface.
+<p>
+Display your team presence on a shared screen for offices,
+operations centres or service desks.
 </p>
-</div>
 
-
-<div class="feature">
-<h3>Status Types</h3>
-<p class="muted">
-Define custom statuses such as Available, Remote, Meeting, or On Leave.
+<p>
+Perfect for teams that need constant visibility of who's on site,
+remote, or returning soon.
 </p>
+
+</div>
+
+<div class="feature-image">
+<img src="image/kiosk.png">
+</div>
+
 </div>
 
 
-<div class="feature">
-<h3>Locations</h3>
-<p class="muted">
-Create locations that reflect where your teams work.
+
+<div class="container feature-row">
+
+<div class="feature-text">
+
+<h2>Simple Administration</h2>
+
+<p>
+Manage users, departments, locations and statuses from a clean admin interface
+built for speed and clarity.
 </p>
-</div>
 
-
-<div class="feature">
-<h3>Departments</h3>
-<p class="muted">
-Organise staff into logical groups across your organisation.
+<p>
+No complicated configuration or enterprise setup required.
 </p>
+
+</div>
+
+<div class="feature-image">
+<img src="image/AdminUsers.png">
+</div>
+
 </div>
 
 
-<div class="feature">
-<h3>Activity Logs</h3>
-<p class="muted">
-Track status changes and system activity for visibility and auditing.
+
+<div class="container feature-row reverse">
+
+<div class="feature-text">
+
+<h2>Audit & Activity Logs</h2>
+
+<p>
+Track changes and activity across your organisation with a built-in logging system.
+Every update to users, statuses and settings is recorded for visibility and troubleshooting.
 </p>
-</div>
 
-
-<div class="feature">
-<h3>System Settings</h3>
-<p class="muted">
-Configure resets, defaults and system behaviour easily.
+<p>
+Perfect for environments where accountability and change tracking are important.
 </p>
-</div>
-
 
 </div>
 
-</section>
-
-
-
-<!-- ADMIN SCREENSHOT -->
-
-<section class="section">
-
-<div class="panel screenshot">
-<img src="img/AdminUsers.png" alt="Attendr Administration">
+<div class="feature-image">
+<img src="image/AdminLogs.png">
 </div>
 
-</section>
-
-
-
-<!-- WHO IT'S FOR -->
-
-<section class="section">
-
-<div class="section-head">
-<h2>Built for operational teams</h2>
-<p class="muted">Attendr is designed for organisations that need real-time visibility.</p>
 </div>
 
-<div class="grid-3">
 
 
-<div class="panel">
-<div class="panel-title">IT Teams</div>
-<p class="muted">
-Know instantly which engineers are available, remote or on-site.
+<div class="container feature-row">
+
+<div class="feature-text">
+
+<h2>Flexible Deployment</h2>
+
+<p>
+Attendr is designed to run where your organisation needs it most.
+Deploy fully on-prem for restricted environments or use the upcoming
+managed cloud platform.
 </p>
-</div>
 
-
-<div class="panel">
-<div class="panel-title">Operations Centres</div>
-<p class="muted">
-Display team presence on shared screens across the operations floor.
+<p>
+The same streamlined dashboard and administrative tools —
+whether deployed inside your infrastructure or accessed via cloud SaaS.
 </p>
+
+<ul>
+<li>Fully self-hosted on-prem deployment</li>
+<li>No external dependencies</li>
+<li>Cloud SaaS platform coming soon</li>
+<li>Same features across both environments</li>
+</ul>
+
 </div>
 
-
-<div class="panel">
-<div class="panel-title">Service Teams</div>
-<p class="muted">
-Track where technicians and support staff are working.
-</p>
+<div class="feature-image">
+<img src="image/dashboard.png">
 </div>
-
 
 </div>
 
@@ -324,34 +222,31 @@ Track where technicians and support staff are working.
 
 
 
-<!-- CTA -->
-
-<section class="cta">
+<section class="cta-section">
 
 <h2>Ready to try Attendr?</h2>
 
-<div class="cta-actions">
-<a class="btn btn-primary btn-lg" href="/download.html">Download Free Trial</a>
-</div>
+<p>Deploy in minutes and see your team's real-time presence instantly.</p>
+
+<a class="btn-primary large" href="/start-download.html">
+Download Free Trial
+</a>
 
 </section>
 
 
-</main>
 
+<footer>
 
+<div class="container footer">
 
-<footer class="footer">
-
-<div class="container footer-inner">
-
-<div>
-© 2026 Attendr
-</div>
+<p>© 2026 Attendr</p>
 
 <div class="footer-links">
-<a href="legal/terms.html">Terms</a>
-<a href="legal/privacy.html">Privacy</a>
+<a href="/legal/terms.html">Terms</a>
+<a href="/legal/privacy.html">Privacy</a>
+</div>
+
 </div>
 
 <div class="footer-producthunt">
@@ -363,9 +258,30 @@ style="width:200px;height:54px;">
 </a>
 </div>
 
-</div>
-
 </footer>
+
+
+
+<script>
+
+let slides = document.querySelectorAll('.carousel');
+let current = 0;
+
+setInterval(() => {
+
+slides[current].classList.remove('active');
+
+current++;
+
+if(current >= slides.length){
+current = 0;
+}
+
+slides[current].classList.add('active');
+
+}, 4000);
+
+</script>
 
 
 </body>

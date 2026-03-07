@@ -10,13 +10,13 @@
 
 <meta name="description" content="Simple annual pricing for Attendr. Real-time staff presence with no cloud dependency.">
 
-<link rel="icon" type="image/png" href="/img/attendr.png">
+<link rel="icon" type="image/png" href="image/attendr.png">
 
 <link rel="stylesheet" href="css/style.css">
-<script defer src="/js/main.js"></script>
+<script defer src="js/main.js"></script>
 
 <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 
@@ -24,31 +24,26 @@
 
 <body>
 
+
 <header class="topbar">
 
-<div class="container topbar-inner">
+<div class="container nav">
 
-<a class="brand" href="/index.html">
-
-<img class="brand-logo" src="img/attendr.png" alt="Attendr logo">
-
-<div class="brand-text">
-<div class="brand-name">Attendr</div>
-<div class="brand-sub">Australian Owned & Operated</div>
+<div class="logo">
+<img src="image/attendr.png" alt="Attendr logo">
+<span>Attendr</span>
 </div>
 
-</a>
-
-<nav class="nav">
+<nav>
 <a href="/features.html">Features</a>
 <a href="/pricing.html">Pricing</a>
 <a href="/download.html">Download</a>
 <a href="/support.html">Support</a>
 </nav>
 
-<div class="topbar-cta">
-<a class="btn btn-ghost" href="/pricing.html">View Pricing</a>
-<a class="btn btn-primary" href="/download.html">Download Free Trial</a>
+<div class="nav-cta">
+<a class="btn-outline" href="/pricing.html">View Pricing</a>
+<a class="btn-primary" href="/download.html">Download Free Trial</a>
 </div>
 
 </div>
@@ -56,21 +51,21 @@
 </header>
 
 
-<main class="container">
-
 
 <section class="hero">
 
-<div class="hero-left">
+<div class="container hero-grid">
+
+<div>
 
 <h1>Simple pricing.<br>No surprises.</h1>
 
-<p class="lead">
+<p>
 Attendr uses simple annual licensing based on the number of users.
 No subscriptions, no complicated tiers — just clear pricing.
 </p>
 
-<div class="hero-badges">
+<div class="hero-buttons">
 <span class="badge">14 Day Trial</span>
 <span class="badge">Annual License</span>
 <span class="badge">On-Prem</span>
@@ -78,18 +73,19 @@ No subscriptions, no complicated tiers — just clear pricing.
 
 </div>
 
-<div class="hero-right">
 
-<div class="panel">
+<div>
 
-<div class="panel-title">Start Free</div>
+<div class="setup-tile">
 
-<p class="muted">
+<h3>Start Free</h3>
+
+<p>
 Download Attendr and run the full system free for 14 days.
 No credit card required.
 </p>
 
-<a class="btn btn-primary btn-lg" href="/download.html">
+<a class="btn-primary large" href="/download.html">
 Download Free Trial
 </a>
 
@@ -97,37 +93,37 @@ Download Free Trial
 
 </div>
 
+</div>
+
 </section>
 
 
 
-<section class="section">
+<section class="setup-section">
 
-<div class="section-head">
-<h2>Annual Licensing</h2>
-<p class="muted">Choose the plan that fits your organisation.</p>
+<div class="container">
+
+<div class="deployment-intro">
+<h2>Attendr On-Prem Licensing</h2>
+<p>Choose the plan that fits your organisation.</p>
 </div>
 
-<div class="pricing-preview">
+
+<div class="setup-grid">
 
 
-<div class="price-card">
+<div class="setup-tile">
 
-<div class="price-name">Starter</div>
+<h3>Starter</h3>
+<p>Up to 50 Users</p>
 
-<div class="price-users">
-Up to 50 Users
-</div>
+<h2>$999 / year</h2>
 
-<div class="price-amount">
-$999 / year
-</div>
-
-<p class="muted">
+<p>
 Perfect for small teams and businesses.
 </p>
 
-<a class="btn btn-primary" href="https://buy.stripe.com/9B6aEX3QJ9HSfKqgoqeME00" target="_blank">
+<a class="btn-primary" href="https://buy.stripe.com/9B6aEX3QJ9HSfKqgoqeME00" target="_blank">
 Purchase License
 </a>
 
@@ -135,23 +131,18 @@ Purchase License
 
 
 
-<div class="price-card highlight">
+<div class="setup-tile">
 
-<div class="price-name">Growth</div>
+<h3>Growth</h3>
+<p>Up to 150 Users</p>
 
-<div class="price-users">
-Up to 150 Users
-</div>
+<h2>$1,999 / year</h2>
 
-<div class="price-amount">
-$1,999 / year
-</div>
-
-<p class="muted">
+<p>
 Ideal for growing teams and organisations.
 </p>
 
-<a class="btn btn-primary" href="https://buy.stripe.com/8x28wPbjb1bmaq66NQeME01" target="_blank">
+<a class="btn-primary" href="https://buy.stripe.com/8x28wPbjb1bmaq66NQeME01" target="_blank">
 Purchase License
 </a>
 
@@ -159,25 +150,23 @@ Purchase License
 
 
 
-<div class="price-card">
+<div class="setup-tile">
 
-<div class="price-name">Business</div>
+<h3>Business</h3>
+<p>Up to 300 Users</p>
 
-<div class="price-users">
-Up to 300 Users
-</div>
+<h2>$2,999 / year</h2>
 
-<div class="price-amount">
-$2,999 / year
-</div>
-
-<p class="muted">
+<p>
 Best for larger departments and operations teams.
 </p>
 
-<a class="btn btn-primary" href="https://buy.stripe.com/00w5kDbjbg6ggOu8VYeME02" target="_blank">
+<a class="btn-primary" href="https://buy.stripe.com/00w5kDbjbg6ggOu8VYeME02" target="_blank">
 Purchase License
 </a>
+
+</div>
+
 
 </div>
 
@@ -186,83 +175,182 @@ Purchase License
 </section>
 
 
+<section class="setup-grey">
 
-<section class="section">
+<div class="container">
 
-<div class="section-head">
+<div class="deployment-intro">
+<h2>Attendr Cloud Platform (SaaS)</h2>
+
+<p>
+Fully managed Attendr cloud service. No infrastructure required.
+</p>
+
+<p class="muted">
+All SaaS plans include the complete Attendr platform.  
+
+</p>
+
+<p><strong>Launching Soon</strong></p>
+
+</div>
+
+
+<div class="setup-grid">
+
+
+<div class="setup-tile">
+
+<h3>Starter Cloud</h3>
+
+<p class="muted">Up to 50 Users</p>
+
+<h2>$49.95 / month</h2>
+
+<p class="muted">$499 / year</p>
+
+<p class="muted">
+Save ~17% with annual billing
+</p>
+
+<span class="badge badge-saas">Coming Soon</span>
+
+</div>
+
+
+
+<div class="setup-tile">
+
+<h3>Growth Cloud</h3>
+
+<p class="muted">Up to 150 Users</p>
+
+<h2>$99.95 / month</h2>
+
+<p class="muted">$999 / year</p>
+
+<p class="muted">
+Save ~17% with annual billing
+</p>
+
+<span class="badge badge-saas">Coming Soon</span>
+
+</div>
+
+
+
+<div class="setup-tile">
+
+<h3>Business Cloud</h3>
+
+<p class="muted">Up to 300 Users</p>
+
+<h2>$149.95 / month</h2>
+
+<p class="muted">$1,499 / year</p>
+
+<p class="muted">
+Save ~17% with annual billing
+</p>
+
+<span class="badge badge-saas">Coming Soon</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<section class="setup-grey">
+
+<div class="container">
+
+<div class="deployment-intro">
 <h2>All plans include</h2>
 </div>
 
-<div class="grid-3">
 
-<div class="panel">
-<div class="panel-title">Full Feature Access</div>
-<p class="muted">
-Every license includes the complete Attendr platform with no feature restrictions.
+<div class="setup-grid">
+
+
+<div class="setup-tile">
+<h3>Full Feature Access</h3>
+<p>
+Every license includes the complete Attendr platform.
 </p>
 </div>
 
-<div class="panel">
-<div class="panel-title">On-Prem Deployment</div>
-<p class="muted">
-Attendr runs entirely inside your infrastructure with no cloud dependency.
+
+<div class="setup-tile">
+<h3>On-Prem Deployment</h3>
+<p>
+Attendr runs entirely inside your infrastructure.
 </p>
 </div>
 
-<div class="panel">
-<div class="panel-title">Email Support</div>
-<p class="muted">
+
+<div class="setup-tile">
+<h3>Email Support</h3>
+<p>
 Direct email support from the Attendr team.
 </p>
 </div>
 
-<div class="panel">
-<div class="panel-title">Simple Licensing</div>
-<p class="muted">
+
+<div class="setup-tile">
+<h3>Simple Licensing</h3>
+<p>
 Licenses are based only on the number of users.
 </p>
 </div>
 
-<div class="panel">
-<div class="panel-title">Fast Setup</div>
-<p class="muted">
+
+<div class="setup-tile">
+<h3>Fast Setup</h3>
+<p>
 Most organisations are up and running within minutes.
 </p>
 </div>
 
-<div class="panel">
-<div class="panel-title">Free Trial</div>
-<p class="muted">
+
+<div class="setup-tile">
+<h3>Free Trial</h3>
+<p>
 Fully functional 14 day trial before purchasing.
 </p>
 </div>
 
+
+</div>
+
 </div>
 
 </section>
 
 
 
-<section class="cta">
+<section class="cta-section">
 
 <h2>Try Attendr today</h2>
 
 <div class="cta-actions">
-<a class="btn btn-primary btn-lg" href="/download.html">
+
+<a class="btn-primary large" href="/download.html">
 Download Free Trial
 </a>
+
 </div>
 
 </section>
 
 
-</main>
 
+<footer>
 
-
-<footer class="footer">
-
-<div class="container footer-inner">
+<div class="container footer">
 
 <div>
 © 2026 Attendr
@@ -273,6 +361,8 @@ Download Free Trial
 <a href="legal/privacy.html">Privacy</a>
 </div>
 
+</div>
+</div>
 <div class="footer-producthunt">
 <a href="https://www.producthunt.com/posts/attendr?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-attendr" target="_blank">
 <img 
@@ -281,10 +371,8 @@ alt="Attendr - Featured on Product Hunt"
 style="width:200px;height:54px;">
 </a>
 </div>
-
-</div>
-
 </footer>
+
 
 </body>
 </html>

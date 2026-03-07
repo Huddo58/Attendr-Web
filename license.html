@@ -1,145 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attendr – Activate License</title>
-  <meta name="description" content="Activate your Attendr license.">
-  <link rel="icon" type="image/png" href="/img/attendr.png">
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="/js/main.js"></script>
 
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Attendr – Activate License</title>
+
+<link rel="icon" type="image/png" href="image/attendr.png">
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/main.js"></script>
+
+<!-- Vercel Analytics -->
+<script>
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
 </head>
 
 <body>
 
 <header class="topbar">
-  <div class="container topbar-inner">
-    <a class="brand" href="/index.html">
-      <img class="brand-logo" src="img/attendr.png" alt="Attendr logo">
-      <div class="brand-text">
-        <div class="brand-name">Attendr</div>
-        <div class="brand-sub">Australian Owned & Operated</div>
-      </div>
-    </a>
+<div class="container nav">
 
-    <nav class="nav">
-      <a href="/features.html">Features</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/download.html">Download</a>
-      <a href="/support.html">Support</a>
-    </nav>
+<div class="logo">
+<img src="image/attendr.png" alt="Attendr logo">
+<span>Attendr</span>
+</div>
 
-    <div class="topbar-cta">
-      <a class="btn btn-ghost" href="/pricing.html">View Pricing</a>
-      <a class="btn btn-primary" href="/download.html">Download Free Trial</a>
-    </div>
-  </div>
+<nav>
+<a href="/features.html">Features</a>
+<a href="/pricing.html">Pricing</a>
+<a href="/download.html">Download</a>
+<a href="/support.html">Support</a>
+</nav>
+
+<div class="nav-cta">
+<a class="btn-outline" href="/pricing.html">View Pricing</a>
+<a class="btn-primary" href="/download.html">Download Free Trial</a>
+</div>
+
+</div>
 </header>
 
-<main class="container">
 
-  <section class="hero">
-    <div class="hero-left">
-      <h1>Activate your license</h1>
-      <p class="lead">
-        Enter your Attendr Instance ID and we’ll email your license file to you instantly.
-      </p>
+<section class="hero">
 
-      <div class="hero-badges">
-        <span class="badge">Secure</span>
-        <span class="badge">Instant Delivery</span>
-        <span class="badge">On-Prem</span>
-      </div>
-    </div>
+<div class="container hero-text center">
 
-    <div class="hero-right">
-      <div class="panel">
-        <div class="panel-title">License details</div>
+<h1>Activate your license</h1>
 
-        <form id="licenseForm">
-          <p class="muted small">Your email (where we send the license)</p>
-          <input id="email" type="email" required style="width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.08); color:white;" placeholder="you@company.com">
+<p class="lead-small">
+Enter your Attendr Instance ID and we’ll email your license file instantly.
+</p>
 
-          <p class="muted small" style="margin-top:14px;">Organisation name</p>
-          <input id="org" type="text" required style="width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.08); color:white;" placeholder="Company Pty Ltd">
+<div class="hero-badges">
+<span class="badge">Secure</span>
+<span class="badge">Instant Delivery</span>
+<span class="badge">On-Prem</span>
+</div>
 
-          <p class="muted small" style="margin-top:14px;">Instance ID (from Attendr)</p>
-          <input id="instanceId" type="text" required style="width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.08); color:white;" placeholder="e.g. 9A4F-21C3-B71D">
+</div>
 
-          <input id="sessionId" type="hidden">
-          <div style="margin-top:18px;">
-            <button class="btn btn-primary btn-lg" type="submit" style="border:none; cursor:pointer; width:100%;">
-              Generate & Email License
-            </button>
-          </div>
+</section>
 
-          <p id="status" class="muted small" style="margin-top:12px;"></p>
-        </form>
 
-        <hr style="margin:18px 0; border:0; border-top:1px solid rgba(255,255,255,0.15);">
+<section class="setup-section">
 
-        <p class="muted small">
-          <strong>Where do I find my Instance ID?</strong><br>
-          In Attendr: <em>Settings → Licensing</em> (or wherever your Instance ID is shown) and click copy.
-        </p>
-      </div>
-    </div>
-  </section>
+<div class="container">
 
-</main>
+<div class="setup-tile" style="max-width:600px;margin:auto;">
 
-<footer class="footer">
-  <div class="container footer-inner">
-    <div>© 2026 Attendr</div>
-    <div class="footer-links">
-      <a href="legal/terms.html">Terms</a>
-      <a href="legal/privacy.html">Privacy</a>
-    </div>
-  </div>
+<h3>License details</h3>
+
+<form id="licenseForm">
+
+<p>Your email</p>
+<input id="email" type="email" required style="width:100%;padding:12px;margin-bottom:15px;">
+
+<p>Organisation name</p>
+<input id="org" type="text" required style="width:100%;padding:12px;margin-bottom:15px;">
+
+<p>Instance ID (from Attendr)</p>
+<input id="instanceId" type="text" required style="width:100%;padding:12px;margin-bottom:20px;">
+
+<input id="sessionId" type="hidden">
+
+<button class="btn-primary large" style="width:100%;" type="submit">
+Generate & Email License
+</button>
+
+<p id="status" style="margin-top:15px;"></p>
+
+</form>
+
+<hr style="margin:25px 0">
+
+<p>
+<strong>Where do I find my Instance ID?</strong><br><br>
+In Attendr: <em>Settings → Licensing</em> and click copy.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="container footer">
+
+<div>© 2026 Attendr</div>
+
+<div class="footer-links">
+<a href="/legal/terms.html">Terms</a>
+<a href="/legal/privacy.html">Privacy</a>
+</div>
+
+</div>
+
 </footer>
 
+
 <script>
-  // Grab Stripe session_id from URL if present
-  const params = new URLSearchParams(window.location.search);
-  const sid = params.get("session_id");
-  if (sid) document.getElementById("sessionId").value = sid;
 
-  document.getElementById("licenseForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
+/* Capture Stripe session ID from URL */
 
-    const status = document.getElementById("status");
-    status.textContent = "Generating license…";
+const params = new URLSearchParams(window.location.search);
+const sid = params.get("session_id");
 
-    const payload = {
-      email: document.getElementById("email").value.trim(),
-      org: document.getElementById("org").value.trim(),
-      instanceId: document.getElementById("instanceId").value.trim(),
-      sessionId: document.getElementById("sessionId").value.trim()
-    };
+if (sid) {
+document.getElementById("sessionId").value = sid;
+document.getElementById("status").textContent =
+"Stripe purchase detected. Enter your Instance ID to generate your license.";
+}
 
-    try {
-      const res = await fetch("/api/issue-license", {
-        method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify(payload)
-      });
 
-      const data = await res.json();
-      if (!res.ok) {
-        status.textContent = data.error || "Something went wrong.";
-        return;
-      }
+/* Handle license form submission */
 
-      status.textContent = "Done! Check your email for the license file.";
-    } catch (err) {
-      status.textContent = "Could not reach licensing service. Please try again.";
-    }
-  });
+document.getElementById("licenseForm").addEventListener("submit", async (e) => {
+
+e.preventDefault();
+
+const status = document.getElementById("status");
+status.textContent = "Generating license…";
+
+const payload = {
+email: document.getElementById("email").value.trim(),
+org: document.getElementById("org").value.trim(),
+instanceId: document.getElementById("instanceId").value.trim(),
+sessionId: document.getElementById("sessionId").value.trim()
+};
+
+try {
+
+const res = await fetch("/api/issue-license",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(payload)
+});
+
+const data = await res.json();
+
+if(!res.ok){
+status.textContent = data.error || "Something went wrong.";
+return;
+}
+
+/* Autofill email returned from Stripe verification */
+
+if(data.email){
+document.getElementById("email").value = data.email;
+}
+
+status.textContent = "Done! Check your email for the license.";
+
+} catch(err){
+
+status.textContent = "Could not reach licensing service. Please try again.";
+
+}
+
+});
+
 </script>
 
 </body>
