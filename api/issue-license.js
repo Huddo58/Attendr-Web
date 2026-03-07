@@ -30,16 +30,19 @@ function plusOneYearISODate() {
 }
 
 function signLicense(payload, privateKeyPem) {
+
   const payloadJson = JSON.stringify(payload);
   const payloadB64 = b64url(payloadJson);
+
+  const keyObject = crypto.createPrivateKey({
+    key: privateKeyPem,
+    format: "pem"
+  });
 
   const signature = crypto.sign(
     null,
     Buffer.from(payloadB64),
-    {
-      key: privateKeyPem,
-      dsaEncoding: "ieee-p1363"
-    }
+    keyObject
   );
 
   const sigB64 = b64url(signature);
