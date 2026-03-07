@@ -32,11 +32,17 @@ align-items:center;
 padding:16px 0;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-weight:600;
+.logo {
+display: flex;
+align-items: center;
+gap: 10px;
+text-decoration: none;
+color: inherit;
+}
+
+.logo span {
+text-decoration: none;
+color: inherit;
 }
 
 .logo img{
