@@ -33,7 +33,15 @@ function signLicense(payload, privateKeyPem) {
   const payloadJson = JSON.stringify(payload);
   const payloadB64 = b64url(payloadJson);
 
-  const signature = crypto.sign(null, Buffer.from(payloadB64), privateKeyPem);
+  const signature = crypto.sign(
+    null,
+    Buffer.from(payloadB64),
+    {
+      key: privateKeyPem,
+      dsaEncoding: "ieee-p1363"
+    }
+  );
+
   const sigB64 = b64url(signature);
 
   return `${payloadB64}.${sigB64}`;
