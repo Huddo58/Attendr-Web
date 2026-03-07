@@ -105,7 +105,8 @@ const session_id = sessionId;
     };
 
     // 4) Sign (Ed25519)
-    const privateKey = process.env.LICENSE_PRIVATE_KEY_PEM;
+    const privateKey = process.env.LICENSE_PRIVATE_KEY_PEM?.replace(/\\n/g, "\n");
+    
     if (!privateKey) return res.status(500).json({ error: "Server missing LICENSE_PRIVATE_KEY_PEM." });
 
     const licenseKey = signLicense(payload, privateKey);
