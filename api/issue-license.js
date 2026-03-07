@@ -31,17 +31,18 @@ function plusOneYearISODate() {
 }
 
 function signLicense(payload, privateKeyPem) {
-
   const payloadJson = JSON.stringify(payload);
   const payloadB64 = b64url(payloadJson);
+
+  const keyObject = crypto.createPrivateKey({
+    key: privateKeyPem,
+    format: "pem"
+  });
 
   const signature = crypto.sign(
     null,
     Buffer.from(payloadB64),
-    {
-      key: privateKeyPem,
-      dsaEncoding: "ieee-p1363"
-    }
+    keyObject
   );
 
   const sigB64 = b64url(signature);
@@ -50,7 +51,6 @@ function signLicense(payload, privateKeyPem) {
 }
 
 async function sendEmail({ to, subject, text }) {
-
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -68,16 +68,14 @@ async function sendEmail({ to, subject, text }) {
     subject,
     text
   });
-
 }
 
 export default async function handler(req, res) {
-
-  if (req.method !== "POST")
+  if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
+  }
 
   try {
-
     const { org, instanceId, sessionId } = req.body || {};
 
     if (!org || !instanceId || !sessionId) {
@@ -92,8 +90,9 @@ export default async function handler(req, res) {
     // Verify Stripe checkout session
     const session = await stripe.checkout.sessions.retrieve(session_id);
 
-    if (!session)
+    if (!session) {
       return res.status(400).json({ error: "Invalid session_id." });
+    }
 
     if (session.payment_status !== "paid") {
       return res.status(402).json({
@@ -101,35 +100,34 @@ export default async function handler(req, res) {
       });
     }
 
-    const email =
-      session.customer_details?.email ||
-      session.customer_email;
+    const email = session.customer_details?.email || session.customer_email;
 
-    if (!email)
+    if (!email) {
       return res.status(400).json({
         error: "Stripe session missing customer email."
       });
+    }
 
     // Determine purchased tier
-    const items =
-      await stripe.checkout.sessions.listLineItems(
-        session_id,
-        { limit: 10 }
-      );
+    const items = await stripe.checkout.sessions.listLineItems(session_id, {
+      limit: 10
+    });
 
     const priceId = items?.data?.[0]?.price?.id;
 
-    if (!priceId)
+    if (!priceId) {
       return res.status(400).json({
         error: "Could not determine purchased item."
       });
+    }
 
     const tierInfo = PRICE_MAP[priceId];
 
-    if (!tierInfo)
+    if (!tierInfo) {
       return res.status(400).json({
         error: "Unknown product price. Check PRICE_MAP."
       });
+    }
 
     const { issued_at, expires_at } = plusOneYearISODate();
 
@@ -145,14 +143,15 @@ export default async function handler(req, res) {
       stripe_invoice: session.id
     };
 
-    // Load private key
+    // Load private key from Vercel env and convert \n back to real newlines
     const privateKey =
       process.env.LICENSE_PRIVATE_KEY_PEM?.replace(/\\n/g, "\n");
 
-    if (!privateKey)
+    if (!privateKey) {
       return res.status(500).json({
         error: "Server missing LICENSE_PRIVATE_KEY_PEM."
       });
+    }
 
     // Sign license
     const licenseKey = signLicense(payload, privateKey);
@@ -181,15 +180,11 @@ ${licenseKey}
 Paste this into Attendr: Admin → Settings → Licensing`
     });
 
-    return res.status(200).json({ ok: true });
-
+    return res.status(200).json({ ok: true, email });
   } catch (err) {
-
     console.error(err);
-
     return res.status(500).json({
       error: "Server error generating license."
     });
-
   }
 }
