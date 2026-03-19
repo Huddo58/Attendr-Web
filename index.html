@@ -26,6 +26,9 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
 </head>
 
+
+
+
 <body>
 
 <header class="topbar">
@@ -38,7 +41,13 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <span>Attendr</span>
 </div>
 
-<nav>
+<!-- Hamburger -->
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+<!-- Desktop nav -->
+<nav class="nav-links">
 <a href="/features.html">Features</a>
 <a href="/pricing.html">Pricing</a>
 <a href="/download.html">Download</a>
@@ -50,6 +59,18 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <a class="btn-primary" href="/start-download.html">Download Free Trial</a>
 </div>
 
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+<a href="/features.html">Features</a>
+<a href="/pricing.html">Pricing</a>
+<a href="/download.html">Download</a>
+<a href="/support.html">Support</a>
+
+<a class="btn-primary mobile-cta" href="/start-download.html">
+Download Free Trial
+</a>
 </div>
 </header>
 
@@ -117,23 +138,42 @@ No infrastructure required — simply log in and manage your team from anywhere.
 </section>
 
 
-<section class="feature-tiles">
+<section class="testimonials-dark">
 
-<div class="container tile-grid">
+<div class="container">
 
-<div class="tile">
-<h3>Simple by design</h3>
-<p>One screen shows your team’s status instantly.</p>
+   
+
+<h2>Trusted in Real Environments</h2>
+
+<p class="subtitle">
+Already used by operational teams to improve visibility and coordination.
+</p>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+<p>
+“Attendr has significantly reduced the time we spend updating staff statuses. 
+It’s also been far more cost-effective — roughly five times cheaper than the system we were previously using.”
+</p>
+<span>Brad - Team Leader, Government Health Organisation</span>
 </div>
 
-<div class="tile">
-<h3>Built for operations</h3>
-<p>Perfect for IT, facilities and service teams.</p>
+<div class="testimonial-card">
+<p>
+“Deployment was incredibly straightforward. Within minutes we had Attendr up and running and delivering immediate value to the team.”
+</p>
+<span>Eric - Server Administrator, <br>Government Health Organisation</span>
 </div>
 
-<div class="tile">
-<h3>Runs where you run</h3>
-<p>Deploy entirely inside your own infrastructure.</p>
+<div class="testimonial-card">
+<p>
+“Attendr is a huge improvement over what we were using before. It’s much cleaner, easier to use, and makes finding the information we need almost instant.”
+</p>
+<span>Paul -Team Member, Government Health Organisation</span>
+</div>
+
 </div>
 
 </div>
@@ -262,6 +302,14 @@ slides[current].classList.add('active');
 }, 4000);
 
 </script>
+
+<script>
+function toggleMenu(){
+const menu = document.getElementById("mobileMenu");
+menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
 
 </body>
 </html>
