@@ -731,23 +731,38 @@ grid-template-columns:1fr;
 
 /* Logo strip */
 .trust-logos {
+  margin-top: 20px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 25px;
-  opacity: 0.85;
+
+  /* REMOVE the “small logo feel” */
+  opacity: 1;
 }
 
+
+
+/* 🔥 StrictSeal "logo" */
+/* Override the small span rule */
 .trust-logos span {
-  font-size: 13px;
-  color: #ccc;
+  font-size: inherit;
 }
 
-.trust-logos img {
-  height: 28px;
+/* Proper logo styling */
+.strictseal-brand {
+  font-size: 50px !important;  /* force override */
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #f8fafc;
+  line-height: 1.1;
+  display: inline-block;
 }
 
+/* Accent */
+.strictseal-brand span {
+  color: #ff8a65;
+}
 /* Card */
 .featured-card {
   background: rgba(255, 255, 255, 0.08);
@@ -781,7 +796,7 @@ grid-template-columns:1fr;
   margin-bottom: 20px;
 }
 
-/* Quote (make this pop) */
+/* Quote */
 .featured-quote {
   font-size: 18px;
   color: #ffffff;
