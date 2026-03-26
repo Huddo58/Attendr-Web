@@ -183,6 +183,11 @@ document.getElementById("pilotForm").addEventListener("submit", async function(e
 
   const form = e.target;
 
+  // 🔥 Update button while submitting
+  const button = form.querySelector("button");
+  button.innerText = "Submitting...";
+  button.disabled = true;
+
   const data = {
     name: form.name.value,
     company: form.company.value,
@@ -202,13 +207,17 @@ document.getElementById("pilotForm").addEventListener("submit", async function(e
     });
 
     if (res.ok) {
-      alert("Thanks! Your application has been submitted.");
+      // ✅ Clean redirect (no popup)
       window.location.href = "/thank-you.html";
     } else {
+      button.innerText = "Submit Application";
+      button.disabled = false;
       alert("Something went wrong. Please try again.");
     }
 
   } catch (err) {
+    button.innerText = "Submit Application";
+    button.disabled = false;
     alert("Network error. Please try again.");
   }
 });
