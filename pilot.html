@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="canonical" href="https://attendr.com.au/">
+
+<title>Attendr – Pilot Program</title>
+<meta name="description" content="Apply for the Attendr founding pilot program. Limited spots available.">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" href="image/attendr.png">
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+<style>
+body {
+  background: linear-gradient(to bottom right, #6ea0c8 0%, #0d2b4d 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.form-container {
+  max-width: 700px;
+  margin: 120px auto 80px;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #dbe3ef;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #2f6fed;
+  box-shadow: 0 0 0 3px rgba(47,111,237,0.15);
+}
+
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1741b6;
+}
+
+.note {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="topbar">
+  <div class="container nav">
+
+    <div class="logo">
+      <a href="/">
+        <img src="image/attendr.png" alt="Attendr logo">
+      </a>
+      <span>Attendr</span>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav class="nav-links">
+      <a href="/features.html">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/download.html">Download</a>
+      <a href="/support.html">Support</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn-outline" href="/pricing.html">View Pricing</a>
+      <a class="btn-primary" href="/start-download.html">Download Free Trial</a>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/features.html">Features</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/download.html">Download</a>
+    <a href="/support.html">Support</a>
+
+    <a class="btn-primary mobile-cta" href="/start-download.html">
+      Download Free Trial
+    </a>
+  </div>
+</header>
+
+<!-- FORM -->
+<div class="form-container">
+  <h1>Apply for Pilot Access</h1>
+  <p>Tell us a bit about your organisation — we’ll reach out if it’s a good fit.</p>
+
+  <form id="pilotForm">
+
+    <label>Name</label>
+    <input type="text" name="name" required />
+
+    <label>Company</label>
+    <input type="text" name="company" required />
+
+    <label>Email</label>
+    <input type="email" name="email" required />
+
+    <label>Company Size</label>
+    <select name="size">
+      <option>1–10</option>
+      <option>10–50</option>
+      <option>50–150</option>
+      <option>150+</option>
+    </select>
+
+    <label>What are you currently using to track attendance?</label>
+    <input type="text" name="current_system" />
+
+    <label>What problem are you trying to solve?</label>
+    <textarea name="problem" rows="4"></textarea>
+
+    <button type="submit">Submit Application</button>
+
+  </form>
+
+  <p class="note">Only 10 organisations will be selected for this pilot</p>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("active");
+}
+
+document.getElementById("pilotForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const data = {
+    name: form.name.value,
+    company: form.company.value,
+    email: form.email.value,
+    size: form.size.value,
+    current_system: form.current_system.value,
+    problem: form.problem.value
+  };
+
+  try {
+    const res = await fetch("/api/pilot-apply", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      alert("Thanks! Your application has been submitted.");
+      window.location.href = "/window.location.hre";
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+
+  } catch (err) {
+    alert("Network error. Please try again.");
+  }
+});
+</script>
+
+</body>
+</html>

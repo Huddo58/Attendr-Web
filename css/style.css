@@ -822,3 +822,82 @@ grid-template-columns:1fr;
 .featured-link:hover {
   text-decoration: underline;
 }
+
+/* Pilot Section */
+
+.pilot-section {
+  padding: 120px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.pilot-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.pilot-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pilot-headline {
+  font-size: 20px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.pilot-headline {
+  font-size: 26px;
+  max-width: 700px;
+  margin: 0 auto 10px;
+}
+
+.pilot-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.pilot-card {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 14px;
+  padding: 28px;
+  width: 500px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+}
+
+.pilot-card h3 {
+  margin-bottom: 15px;
+}
+
+.pilot-card ul {
+  padding-left: 18px;
+  color: #555;
+}
+
+.pilot-card li {
+  margin-bottom: 8px;
+}
+.pilot-cards {
+  margin-bottom: 60px; /* was ~30-40 */
+}
+
+.pilot-note {
+  margin-bottom: 30px;
+  margin-top: 10px; /* add this */
+}
+
+.pilot-value {
+  color: #1d4ed8;
+  font-weight: 500;
+}
